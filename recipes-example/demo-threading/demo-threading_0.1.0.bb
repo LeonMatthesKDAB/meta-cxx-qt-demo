@@ -1,6 +1,9 @@
 inherit cmake_qt5
 
 DEPENDS+="qtbase qtdeclarative qtquickcontrols2 demo-threading-rustlib"
+RDEPENDS_${PN} = "qtquickcontrols2 \
+		qtquickcontrols2-mkspecs \
+		"
 
 SUMMARY="The Cxx-Qt Threading Demo"
 LICENSE="MIT"
