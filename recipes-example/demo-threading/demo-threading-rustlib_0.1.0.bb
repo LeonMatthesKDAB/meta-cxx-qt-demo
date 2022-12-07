@@ -8,10 +8,10 @@ inherit cargo
 # how to get demo-threading could be as easy as but default to a git checkout:
 # SRC_URI += "crate://crates.io/demo-threading/0.1.0"
 SRC_URI += "gitsm://github.com/LeonMatthesKDAB/cxx-qt.git;protocol=https;nobranch=1;branch=yocto"
-SRCREV = "9118d3fcdd838c71cde92cb0d5043b010b9db517"
+SRCREV = "5e384c1a2cd4962e7551983ca1461b3a5eef83ca"
 S = "${WORKDIR}/git"
 CARGO_SRC_DIR = "examples/demo_threading/"
-PV_append = ".AUTOINC+85f69110f4"
+PV_append = ".AUTOINC+5e384c1a2cd4962e7551983ca1461b3a5eef83ca"
 
 # please note if you have entries that do not begin with crate://
 # you must change them to how that package can be fetched

@@ -1,8 +1,9 @@
-inherit cmake_qt5
+inherit cmake_qt5 systemd
 
 DEPENDS+="qtbase qtdeclarative qtquickcontrols2 demo-threading-rustlib"
 RDEPENDS_${PN} = "qtquickcontrols2 \
-		qtquickcontrols2-mkspecs \
+		qtgraphicaleffects-qmlplugins \
+		ttf-opensans \
 		"
 
 SUMMARY="The Cxx-Qt Threading Demo"
@@ -12,7 +13,8 @@ LIC_FILES_CHKSUM = " \
 "
 
 SRC_URI="gitsm://github.com/LeonMatthesKDAB/cxx-qt.git;protocol=https;nobranch=1;branch=yocto"
-SRCREV="9118d3fcdd838c71cde92cb0d5043b010b9db517"
+SRCREV="5e384c1a2cd4962e7551983ca1461b3a5eef83ca"
 S = "${WORKDIR}/git"
 
 OECMAKE_SOURCEPATH="${S}/examples/demo_threading/"
+SYSTEMD_SERVICE_${PN} = "demo-threading.service demo-threading-sensors.service"
